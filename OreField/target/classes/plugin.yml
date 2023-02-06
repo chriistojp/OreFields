@@ -1,0 +1,6 @@
+name: OreFields
+version: '1.0-SNAPSHOT'
+main: me.christo.Main
+api-version: 1.19
+authors: [ christo ]
+description: Ore Fields for SkySurge
