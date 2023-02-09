@@ -4,3 +4,5 @@ main: me.christo.Main
 api-version: 1.19
 authors: [ christo ]
 description: Ore Fields for SkySurge
+commands:
+  giveorefield:
