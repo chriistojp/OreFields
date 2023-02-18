@@ -3,6 +3,8 @@ package me.christo.Handlers;
 
 import org.bukkit.Material;
 
+import java.util.List;
+
 public class MaterialChance {
     private Material material;
     private int chance;
@@ -19,4 +21,5 @@ public class MaterialChance {
     public int getChance() {
         return chance;
     }
+
 }
