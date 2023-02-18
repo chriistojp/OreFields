@@ -59,6 +59,10 @@
             <url>https://hub.spigotmc.org/nexus/content/repositories/snapshots/</url>
         </repository>
         <repository>
+            <id>BGSoft-API</id>
+            <url>https://repo.bg-software.com/repository/api/</url>
+        </repository>
+        <repository>
             <id>sonatype</id>
             <url>https://oss.sonatype.org/content/groups/public/</url>
         </repository>
@@ -71,5 +75,13 @@
             <version>1.19-R0.1-SNAPSHOT</version>
             <scope>provided</scope>
         </dependency>
+        <!-- https://mvnrepository.com/artifact/com.bgsoftware/SuperiorSkyblockAPI -->
+        <dependency>
+            <groupId>com.bgsoftware</groupId>
+            <artifactId>SuperiorSkyblockAPI</artifactId>
+            <version>2022.9</version>
+            <scope>provided</scope>
+        </dependency>
+
     </dependencies>
 </project>

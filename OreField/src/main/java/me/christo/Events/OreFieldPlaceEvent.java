@@ -24,10 +24,21 @@ public class OreFieldPlaceEvent implements Listener {
                         if(player.getIslandLeader().equals(player)) {
                             //is island leader
                             //allow place
+                            String islandName = player.getIslandLeader().getName() + "_island";
+
+                            double x = e.getBlock().getX();
+                            double y = e.getBlock().getY();
+                            double z = e.getBlock().getZ();
+
+                            String locationString = x + " " + y + " " + z;
+                            Util.query("INSERT INTO `" + islandName + "` (`location`, `level`) VALUES ('" + locationString + "', '999')");
 
 
-
+                        } else {
+                            e.getPlayer().sendMessage("You must be the island leader to do that!");
                         }
+                    } else {
+                        e.getPlayer().sendMessage("You must be the island leader to do that!x");
                     }
 
 

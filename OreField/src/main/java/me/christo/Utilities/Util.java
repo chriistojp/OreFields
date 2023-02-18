@@ -1,10 +1,16 @@
 package me.christo.Utilities;
 
+import com.bgsoftware.superiorskyblock.api.SuperiorSkyblockAPI;
+import com.bgsoftware.superiorskyblock.api.handlers.RolesManager;
+import com.bgsoftware.superiorskyblock.api.island.PlayerRole;
+import com.bgsoftware.superiorskyblock.api.wrappers.SuperiorPlayer;
 import org.bukkit.ChatColor;
 import org.bukkit.Material;
+import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
 
+import javax.management.relation.Role;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
@@ -22,6 +28,18 @@ public class Util {
         return ChatColor.translateAlternateColorCodes('&', "&7" + s);
     }
 
+    public static String islandLeaderMessage() {
+        return Util.color("You must be the island leader to do this!", true);
+    }
+    public static String noPermissionMessage() {
+        return Util.color("&7You don't have permission to do that!", true);
+    }
+
+    public static boolean checkIslandLeaderPermission(Player p) {
+        SuperiorPlayer player = SuperiorSkyblockAPI.getPlayer(p);
+        return player.getIslandLeader().getName().equals(p.getName());
+    }
+
     public static void query(String query) {
 
 
@@ -29,12 +47,12 @@ public class Util {
         String user = "u11_LMPFwUnh55";
         String pass = "DWfJy@8f2b3=^=504!s28I3x";
         try {
-            Connection conn = DriverManager.getConnection(dbURL, user, pass);
+            Connection conn = Util.getConnection();
             Statement statement = conn.createStatement();
             statement.executeUpdate(query);
             statement.close();
             if (conn != null) {
-                System.out.println("Connected");
+                // System.out.println("Connected");
             }
         } catch (SQLException e) {
 
