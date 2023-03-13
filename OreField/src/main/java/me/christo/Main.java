@@ -29,7 +29,6 @@ public final class Main extends JavaPlugin {
         this.getServer().getPluginManager().registerEvents(new IslandDeleteEvent(), this);
         this.getServer().getPluginManager().registerEvents(new BeaconBreakEvent(), this);
         this.getServer().getPluginManager().registerEvents(new BeaconClickEvent(), this);
-        this.getServer().getPluginManager().registerEvents(new FireSpreadEvent(), this);
         getCommand("orefields").setExecutor(new OreFields());
 
         String dbURL = "jdbc:mysql://u11_LMPFwUnh55:DWfJy%408f2b3%3D%5E%3D504!s28I3x@172.18.0.1:3306/s11_OreFields";
